@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+        <form action="" class="form-questions">
+          <fieldset class="questions">
+            <legend>Please enter the Length of your password <span>(range of 8 and 128 characters)</span></legend>
+            <ul class="list-questions">
+              <li>
+                <label for="length-password">
+                  <input id="length-password" class="list-input-questions-length" type="number" min="8" max="128" placeholder="e.g., 25">
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="questions">
+            <legend>Do you want the password with lowercase characters?</legend>
+            <ul class="list-questions">
+              <li>
+                <label for="yes-lowercase"><input checked name="lowercase" id="yes-lowercase" type="radio" value="true">Yes</label>
+              </li>
+              <li><label for="no-lowercase"><input name="lowercase" id="no-lowercase" type="radio" value="false">No</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="questions">
+            <legend>Do you want the password with uppercase characters?</legend>
+            <ul class="list-questions">
+              <li>
+                <label for="yes-uppercase"><input checked name="uppercase" id="yes-uppercase" type="radio" value="true">Yes</label>
+              </li>
+              <li><label for="no-uppercase"><input name="uppercase" id="no-uppercase" type="radio" value="false">No</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="questions">
+            <legend>Do you want the password with numbers characters?</legend>
+            <ul class="list-questions">
+              <li>
+                <label for="yes-numbers"><input checked name="numbers" id="yes-numbers" type="radio" value="true">Yes</label>
+              </li>
+              <li><label for="no-numbers"><input name="numbers" id="no-numbers" type="radio" value="false">No</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="questions">
+            <legend>Do you want the password with special characters?</legend>
+            <ul class="list-questions">
+              <li>
+                <label for="yes-special-characters"><input checked name="special-characters" id="yes-special-characters" type="radio" value="true">Yes</label>
+              </li>
+              <li><label for="no-special-characters"><input name="special-characters" id="no-special-characters" type="radio" value="false">No</label>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+        <div class="card-footer">
+          <button id="generate" class="btn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
