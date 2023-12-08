@@ -17,56 +17,22 @@
           <h2>Generate a Password</h2>
         </div>
         <form action="" class="form-questions">
-          <fieldset class="questions">
-            <legend>Please enter the Length of your password <span>(range of 8 and 128 characters)</span></legend>
-            <ul class="list-questions">
-              <li>
-                <label for="length-password">
-                  <input id="length-password" class="list-input-questions-length" type="number" min="8" max="128" placeholder="e.g., 25">
-                </label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="questions">
-            <legend>Do you want the password with lowercase characters?</legend>
-            <ul class="list-questions">
-              <li>
-                <label for="yes-lowercase"><input checked name="lowercase" id="yes-lowercase" type="radio" value="true">Yes</label>
-              </li>
-              <li><label for="no-lowercase"><input name="lowercase" id="no-lowercase" type="radio" value="false">No</label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="questions">
-            <legend>Do you want the password with uppercase characters?</legend>
-            <ul class="list-questions">
-              <li>
-                <label for="yes-uppercase"><input checked name="uppercase" id="yes-uppercase" type="radio" value="true">Yes</label>
-              </li>
-              <li><label for="no-uppercase"><input name="uppercase" id="no-uppercase" type="radio" value="false">No</label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="questions">
-            <legend>Do you want the password with numbers characters?</legend>
-            <ul class="list-questions">
-              <li>
-                <label for="yes-numbers"><input checked name="numbers" id="yes-numbers" type="radio" value="true">Yes</label>
-              </li>
-              <li><label for="no-numbers"><input name="numbers" id="no-numbers" type="radio" value="false">No</label>
-              </li>
-            </ul>
-          </fieldset>
-          <fieldset class="questions">
-            <legend>Do you want the password with special characters?</legend>
-            <ul class="list-questions">
-              <li>
-                <label for="yes-special-characters"><input checked name="special-characters" id="yes-special-characters" type="radio" value="true">Yes</label>
-              </li>
-              <li><label for="no-special-characters"><input name="special-characters" id="no-special-characters" type="radio" value="false">No</label>
-              </li>
-            </ul>
-          </fieldset>
+          <label for="length-password">Length of your password <span>(from 8 to 128): </span>
+            <input id="length-password" class="input-questions-length" type="number" min="8" max="128" placeholder="e.g., 25">
+          </label>
+
+          <label for="yes-lowercase">
+            <input checked name="lowercase" id="yes-lowercase" type="checkbox" value="true"> Lowercase
+          </label>
+
+          <label for="yes-uppercase">
+            <input checked name="uppercase" id="yes-uppercase" type="checkbox" value="true">Uppercase
+          </label>
+          
+          <label for="yes-numbers"><input checked name="numbers" id="yes-numbers" type="checkbox" value="true">Numbers</label>
+
+          <label for="yes-special-characters"><input checked name="special-characters" id="yes-special-characters" type="checkbox" value="true">Special characters</label>
+          
         </form>
         <div class="card-body">
           <textarea

@@ -41,35 +41,29 @@ function generatePassword() {
   let passwordstring = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.+*?^$()[]{}|[$&+,:;=?@#|'<>.^*()%!-]";
   //Array empty for the password
   let passwordGenerate = [];
-  
+  console.log(lowerCasePassword[0].checked);
   //Asking for the length of the password
   if(Number(lengthPassword.value) >= 8 && Number(lengthPassword.value) <= 128){
-    for(let i =0; i < 2; i++){
-      if(lowerCasePassword[i].checked){
-        if(lowerCasePassword[i].value == "false"){
-          passwordstring = passwordstring.match(/[^a-z]+/g).join("");
-        }
+    
+      if(!lowerCasePassword[0].checked){
+        passwordstring = passwordstring.match(/[^a-z]+/g).join("");
       }
-      if(upperCasePassword[i].checked){
-        if(upperCasePassword[i].value == "false"){
-          passwordstring = passwordstring.match(/[^A-Z]+/g).join("");
-        }
+      if(!upperCasePassword[0].checked){
+        passwordstring = passwordstring.match(/[^A-Z]+/g).join("");
       }
-      if(numbersPassword[i].checked){
-        if(numbersPassword[i].value == "false"){
-          passwordstring = passwordstring.match(/[^0-9]+/g).join("");
-        }
+      if(!numbersPassword[0].checked){
+        passwordstring = passwordstring.match(/[^0-9]+/g).join("");
       }
-      if(specialCharactersPassword[i].checked){
-        if(specialCharactersPassword[i].value == "false" && passwordstring.match(/[\w]+/g) != null){
-          passwordstring = passwordstring.match(/[\w]+/g).join("");
+      if(specialCharactersPassword[0].checked == false && passwordstring.match(/[\w]+/g) != null){
+        passwordstring = passwordstring.match(/[\w]+/g).join("");
+
         }else if(passwordstring.match(/[\w]+/g) == null){
           passwordstring = passwordstring.match(/[\w]+/g);
-          window.alert('to get a generated password one of the options should be "yes".');
+          window.alert('one of the options should be activate it.');
           return passwordstring;
         }
-      }
-    }
+      
+    
     let passwordArray = passwordstring.split("");
     
     for(let j= 0; j <Number(lengthPassword.value); j++){
@@ -79,7 +73,7 @@ function generatePassword() {
     return passwordGenerate.join("");
   }else{
     lengthPassword.value="";
-    window.alert("Please enter a number between 8 and 128.");
+    window.alert("Enter a number between 8 and 128.");
     return "";
   }
 
